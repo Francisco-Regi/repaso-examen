@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio Redes - Extraordinario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="main-layout">
+        <div class="game-area">
+            <div class="header">
+                <h1>Guía de Extraordinario</h1>
+                <div class="lives-container">
+                    VIDAS: <span id="lives">4</span>
+                </div>
+            </div>
+            
+            <div id="game-board" class="game-board">
+                <p class="loading">Cargando...</p>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="instruction-box">
+                <h3>¿Cómo jugar?</h3>
+                <p>1. <strong>Pares:</strong> Si la carta es una definición, busca su respuesta y selecciónala.</p>
+                <p>2. <strong>Verdadero/Falso:</strong> Si la carta es una afirmación numerada (ej. "16..."), selecciónala y pulsa el botón abajo.</p>
+            </div>
+            
+            <div class="vf-controls">
+                <button class="vf-btn btn-green" onclick="checkTF('true')">VERDADERO</button>
+                <button class="vf-btn btn-red" onclick="checkTF('false')">FALSO</button>
+            </div>
+            
+            <div id="feedback-msg" class="feedback"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
